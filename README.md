@@ -1,2 +1,1 @@
-![Repo Size](https://shields.io)
-
+(https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge)
