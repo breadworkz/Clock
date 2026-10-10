@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- White, as in the source artwork: the mark is two saturated discs and it needs the ground
+         to stay out of the way. This fills the whole 108 dp canvas, so the launcher's mask - circle,
+         squircle, teardrop - cuts it cleanly whatever shape the device uses. -->
+    <color name="ic_launcher_background">#FFFFFFFF</color>
+</resources>

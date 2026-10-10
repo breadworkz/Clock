@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!--
+      Both lines matter. Listing any <include> makes backup opt-in, and Preferences DataStore
+      writes to filesDir/datastore/ rather than to sharedpref, so with only the sharedpref line
+      here this app backed up nothing at all: no alarms, no cities, no theme, and no widget
+      records for the provider's onRestored to remap. (The comment that used to be here described
+      the Notes app's index database, copied across and never true of this one.)
+    -->
+    <include domain="sharedpref" path="." />
+    <include domain="file" path="datastore/" />
+</full-backup-content>

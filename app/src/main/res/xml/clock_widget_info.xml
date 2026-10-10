@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  updatePeriodMillis is 0 on purpose. The framework floor is 30 minutes, which is both far too slow
+  for a clock and completely unnecessary: the hands are ticked by the host's own AnalogClock and the
+  date by its TextClock, so this app never needs a periodic wakeup at all.
+
+  configure is fully qualified. A leading dot here is a silent ActivityNotFoundException, because
+  the framework does intent.setComponent(info.configure) with no package resolution.
+
+  The API 31 attributes (targetCell*, maxResize*, description, widgetFeatures) are kept in the
+  binary XML by aapt and ignored by older parsers, so no -v31 split is needed.
+-->
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="110dp"
+    android:minHeight="110dp"
+    android:minResizeWidth="70dp"
+    android:minResizeHeight="70dp"
+    android:maxResizeWidth="320dp"
+    android:maxResizeHeight="320dp"
+    android:targetCellWidth="3"
+    android:targetCellHeight="3"
+    android:resizeMode="horizontal|vertical"
+    android:widgetCategory="home_screen"
+    android:updatePeriodMillis="0"
+    android:initialLayout="@layout/widget_clock_placeholder"
+    android:description="@string/widget_description"
+    android:configure="app.materialclock.widget.ClockWidgetConfigActivity"
+    android:widgetFeatures="reconfigurable" />

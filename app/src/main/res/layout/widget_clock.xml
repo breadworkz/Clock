@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Three layers, and only the first is ours to draw.
+
+  The face is a bitmap we render; the hands are the platform's own AnalogClock, which ticks inside
+  the *launcher's* process and costs this app nothing; the date is a TextClock, which re-formats
+  itself every minute in the host and rolls over at midnight with no app involvement.
+
+  AnalogClock is match_parent so its onMeasure gets an EXACTLY spec and onDraw never scales the
+  hand icons down. Its dial is set to a 1x1 transparent icon at runtime, since the face underneath
+  is the dial as far as the user is concerned.
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/face"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:importantForAccessibility="no" />
+
+    <AnalogClock
+        android:id="@+id/hands"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!--
+      Positioned at runtime with setViewPadding, which is API 16. setViewLayoutMargin would be
+      cleaner but is API 31, and this app supports 26.
+    -->
+    <FrameLayout
+        android:id="@+id/date_slot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextClock
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|start"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:fontFamily="@font/google_sans_flex" />
+    </FrameLayout>
+</FrameLayout>

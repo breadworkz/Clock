@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      A bare splash/window theme. All real theming is Compose-side in MaterialExpressiveTheme;
+      this exists only so the window before the first frame is not white-on-dark.
+      Edge-to-edge is enabled in code via enableEdgeToEdge().
+    -->
+    <style name="Theme.MaterialClock" parent="android:Theme.Material.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowBackground">?android:attr/colorBackground</item>
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+    </style>
+</resources>

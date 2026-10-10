@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The app mark: a blue-to-periwinkle disc sitting on a pale blue disc offset below it.
+
+  Traced from the 200 x 200 source rather than eyeballed. Measured there:
+
+    front disc   centre (99.5, 93.5)  r 61.5   vertical gradient #3186FF -> #949DFF
+    back disc    centre (99.0, 109.0) r 59.0   flat #BBE2FE
+    gradient run y 58 -> 152, clamped, which is what leaves the top of the disc flat
+
+  Scale is 72/200 = 0.36, centred on (54, 54). That is the one number worth stating: the source
+  frame maps to the **72 dp visible circle**, not to the 66 dp safe circle. Fitting the artwork to
+  the safe circle instead blows the disc up by 30% and eats the margin the artwork was drawn with.
+  A first pass naturally does exactly that, since 66 dp is the number the docs put in front of you.
+  The safe circle is a floor for legibility, not a target to fill.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Back disc first: the front one has to sit on top of it. -->
+    <path
+        android:fillColor="#BBE2FE"
+        android:pathData="M53.64,57.24 m-21.24,0 a21.24,21.24 0 1,0 42.48,0 a21.24,21.24 0 1,0 -42.48,0 Z" />
+
+    <path android:pathData="M53.82,51.66 m-22.14,0 a22.14,22.14 0 1,0 44.28,0 a22.14,22.14 0 1,0 -44.28,0 Z">
+        <aapt:attr xmlns:aapt="http://schemas.android.com/aapt" name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="54"
+                android:startY="38.88"
+                android:endX="54"
+                android:endY="72.72"
+                android:tileMode="clamp">
+                <item android:offset="0" android:color="#3186FF" />
+                <item android:offset="1" android:color="#949DFF" />
+            </gradient>
+        </aapt:attr>
+    </path>
+</vector>
