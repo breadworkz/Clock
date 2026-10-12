@@ -8,5 +8,6 @@
 ![Stars](https://m3-markdown-badges.vercel.app/stars/6/1/breadworkz/Clock)
 ![Issues](https://m3-markdown-badges.vercel.app/issues/8/1/breadworkz/Clock)
 ![Licence GPLv3](https://ziadoua.github.io/m3-Markdown-Badges/badges/LicenceGPLv3/licencegplv32.svg)
+![Android Screenshot](https://raw.githubusercontent.com/breadworkz/Clock/master/AndroidScreenshot.svg)
 
 
